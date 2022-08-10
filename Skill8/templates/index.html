@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+table, th, td {
+  border:0.01px solid black;
+}
+</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>flask-bootstrap example</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  </head>
+  <body>
+
+  <div style="text-align:center;">
+  <h1>Purchasing of Books in a Shop</h1>
+  </div>
+  <hr>
+  <br>
+  <article>
+    <div class="table-responsive">
+    <table style="width:100%">
+        <thead class="thead-dark">
+            <tr>
+                <th>S/N</th>
+                <th>Book Name</th>
+                <th>Book Title</th>
+
+            </tr>
+        </thead>
+        <tbody>
+             {% for user in users %}
+            <tr>
+              <td>{{ loop.index + (page - 1) * per_page }}</td>
+              <td>Book {{ user + 1 }}</td>
+              <td>Book {{ user + 1 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+        <br>
+        <br>
+        <div style="text-align:center;">
+            {{ pagination.links }}
+        </div>
+</div>
+      </article>
+  </body>
+</html>
